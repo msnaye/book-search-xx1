@@ -14,10 +14,14 @@ const resolvers = {
         }
   
         throw new AuthenticationError('Not logged in');
-    },
-    user: async (parent,{username}) => User.findOne({username: username}),
-    users: async () => User.find(),
     }},
+
+//     user: async (parent,{username}) => User.findOne({username: username}),
+//     users: async () => User.find(),
+// return userData;
+//     }
+//     throw new AuthenticationError('You are not logged in!');
+//     }},
 
     Mutation: {
         addUser: async (parent, args) => {
@@ -42,4 +46,31 @@ const resolvers = {
           const token = signToken(user);
           return { token, user };
         },
-        
+        saveBook: async (parent,{input}, context) => {
+            if (context.user) {
+              const updatedUser = await User.findOneAndUpdate(
+                { _id: context.user._id },
+                { $push: { savedBooks: input } },
+                { new: true, runValidators: true }
+              );
+      
+              return updatedUser;
+            }
+      
+            throw new AuthenticationError('You are not logged in!');
+          },
+          deleteBooks: async (parent,{bookId}, context) =>{
+              if (context.user){
+                  const updatedUser = await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $pull: { savedBooks: []} },
+                    { new: true, runValidators: true },
+                  );
+                  return updatedUser;
+              }
+              throw new AuthenticationError('Please log in!');
+            }
+    }
+}
+    
+    module.exports=resolvers;
