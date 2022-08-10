@@ -59,7 +59,7 @@ const resolvers = {
       
             throw new AuthenticationError('You are not logged in!');
           },
-          deleteBooks: async (parent,{bookId}, context) =>{
+          removeBooks: async (parent,{bookId}, context) =>{
               if (context.user){
                   const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
