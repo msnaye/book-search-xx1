@@ -1,5 +1,14 @@
 # Book-Search-xx1
 
+## Table of Contents
+
+- [User Story](#User-Story)
+- [Acceptance Criteria](#Acceptance-Criteria)
+- [Technologies](#Technologies)
+- [Contact Me](#Contact-Me)
+- [Screenshot](#Screenshot)
+- [Live Link](#Live-Link)
+
 ## User Story
 
 AS AN avid reader
@@ -38,7 +47,7 @@ THEN that book is deleted from my saved books list
 WHEN I click on the Logout button
 THEN I am logged out of the site and presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button
 
-## Languages & Packages
+## Technologies
 
 - JavaScript
 - html
@@ -48,12 +57,18 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 - Node
 - Apollo
 
+## Contact Me
 
-## Screenshots
-![image](./public/assets/images/Homepage.png)
+[Github](https://github.com/msnaye)
+[linkedin](https://www.linkedin.com/in/mayra-ibarra-78588588/)
 
+## Screenshot
+![image](../images/Book.png)
 
+This is what it's supposed to look like.
 
 ## Live App
 
-[Live Link]()
+[Live Link](https://git.heroku.com/book-search-xx1.git)
+
+This is the link to Heroku, but I had difficulties with deployment of Heroku.
