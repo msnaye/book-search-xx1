@@ -63,7 +63,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 [linkedin](https://www.linkedin.com/in/mayra-ibarra-78588588/)
 
 ## Screenshot
-![image](../images/Book.png)
+![image](./client/src/img/Book.png)
 
 This is what it's supposed to look like.
 
